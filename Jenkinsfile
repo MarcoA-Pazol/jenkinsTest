@@ -1,13 +1,13 @@
 pipeline {
     agent {
         docker {
-           image 'maven:3.9.3-eclipse-temurin-17' 
+           'maven:3.9.6-eclipse-temurin-17-alpine' 
         }
     }
     stages {
         stage('Build') { 
             steps {
-                sh 'Hola Mundo :)' 
+                sh 'mvn --version' 
             }
         }
     }
