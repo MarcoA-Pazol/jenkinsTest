@@ -1,9 +1,13 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image '3-eclipse-temurin-17'
+        }
+    }
     stages {
         stage('Build') { 
             steps {
-                sh ''
+                sh 'mvn --version'
             }
         }
     }
