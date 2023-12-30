@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                sh 'java /src'
+                sh 'mvn package'
             }
         }
     }
