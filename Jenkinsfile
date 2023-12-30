@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                sh 'mvn -B /src/main/com/mycompany/app/App.java'
+                sh 'java -jar /src/main/com/mycompany/app/App.java'
             }
         }
     }
