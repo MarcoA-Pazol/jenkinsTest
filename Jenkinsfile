@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                sh 'java /src/main/com/mycompany/app'
+                sh 'java /src/main/com/mycompany/app/App'
             }
         }
     }
