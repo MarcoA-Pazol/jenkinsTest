@@ -7,7 +7,7 @@ pipeline {
         stage('Build') { 
             steps {
                 sh 'mvn package'
-                sh 'java -jar *.jar'
+                sh 'java -jar /target/*.jar'
             }
         }
     }
