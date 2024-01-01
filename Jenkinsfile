@@ -7,7 +7,7 @@ pipeline {
         stage('Build') { 
             steps {
                 sh 'mvn package'
-                sh 'java -jar /target/my-app-1.0-SNAPSHOT.jar'
+                sh 'pwd'
             }
         }
     }
