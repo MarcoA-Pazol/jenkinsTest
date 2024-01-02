@@ -7,22 +7,22 @@ pipeline {
                     sh 'mvn verify'
                 }
             }
+        }
         stage('Clean') {
-                tools {
-                    maven 'MVN'
-                }
-                steps {
-                    sh 'mvn clean'
-                }
+            tools {
+                maven 'MVN'
             }
+            steps {
+                sh 'mvn clean'
+            }
+        }
         stage('Build') {
-                agent docker {
-                    image 'maven:latest'
-                }
-                steps {
-                    sh 'mvn package'
-                    sh 'java -jar target/*.jar'
-                }
+            agent docker {
+                image 'maven:latest'
+            }
+            steps {
+                sh 'mvn package'
+                sh 'java -jar target/*.jar'
             }
         }
     }
