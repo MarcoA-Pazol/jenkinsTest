@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Test') { 
             steps {
-                withMaven( mavenLocalRepo: '.repository' ) {
+                withMaven( mavenLocalRepo: '.' ) {
                     sh 'mvn package'
                 }
                 sh 'java -jar target/*.jar'
