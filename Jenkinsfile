@@ -1,13 +1,11 @@
 pipeline {
     agent any
-    tools {
-        maven 'apache-maven-3.9.6'
-    }
     stages {
-        stage('Build') { 
+        stage('Test') { 
             steps {
-                sh 'mvn package'
-                sh 'mvn compile'
+                withMaven {
+                    sh 'mvn clean package'
+                }
                 sh 'java -jar target/*.jar'
             }
         }
