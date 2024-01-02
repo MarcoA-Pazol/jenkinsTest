@@ -4,23 +4,13 @@ pipeline {
         stage('Test') { 
             steps {
                 withMaven( maven: 'MVN' ) {
-                    sh 'mvn verify'
+                    sh 'mvn clean verify'
                 }
-            }
-        }
-        stage('Clean') {
-            tools {
-                maven 'MVN'
-            }
-            steps {
-                sh 'mvn clean'
             }
         }
         stage('Build') {
-            agent {
-                docker {
-                    image 'maven:3.9.6-eclipse-temurin-17-alpine'
-                }
+            tools {
+                maven 'MVN'
             }
             steps {
                 sh 'mvn package'
